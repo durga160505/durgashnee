@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unit Converter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            color: white;
+        }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .btn-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+		input {
+            width: 50%;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px;
+            font-size: 13px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .btn:hover {
+            background: #2F4F4F;
+            color: black;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="jellyfish.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="container">
+        <h1>Unit Converter</h1>
+        <p>Convert between different length units</p>
+        <input type="number" id="value" placeholder="Enter value">
+        <div class="btn-container">
+            <button class="btn" onclick="convert('cmToM')">CM ➡ M</button>
+            <button class="btn" onclick="convert('mToCm')">M ➡ CM</button>
+            <button class="btn" onclick="convert('mToKm')">M ➡ KM</button>
+            <button class="btn" onclick="convert('kmToM')">KM ➡ M</button>
+        </div>
+        <p class="result" id="conversionResult"></p>
+        <a href="tools.html" class="back-btn"> Back to Tools</a>
+    </div>
+    <script>
+        function convert(type) {
+            let value = parseFloat(document.getElementById('value').value);
+            let result = document.getElementById('conversionResult');
+            if (isNaN(value) || value <= 0) {
+                result.innerHTML = " Please enter a valid number!";
+                result.style.color = "yellow";
+                return;
+            }
+            let convertedValue;
+            switch (type) {
+                case 'cmToM':
+                    convertedValue = value / 100;
+                    result.innerHTML = `${value} cm = ${convertedValue.toFixed(4)} m`;
+                    break;
+                case 'mToCm':
+                    convertedValue = value * 100;
+                    result.innerHTML = `${value} m = ${convertedValue.toFixed(2)} cm`;
+                    break;
+                case 'mToKm':
+                    convertedValue = value / 1000;
+                    result.innerHTML = `${value} m = ${convertedValue.toFixed(4)} km`;
+                    break;
+                case 'kmToM':
+                    convertedValue = value * 1000;
+                    result.innerHTML = `${value} km = ${convertedValue.toFixed(2)} m`;
+                    break;
+            }
+            result.style.color = "white";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to my Tools Page! | Durgashnee</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&family=Montserrat:wght@300;500&display=swap">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        h1 {
+            font-family: "Playfair Display", serif;
+        }
+        .tools-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 80%;
+            max-width: 800px;
+        }
+        .tool-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .special-box-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .special-box {
+             display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="jellyfish.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="container">
+        <h1 class="w3-jumbo">Welcome to my Tools Page!</h1>
+        <div class="tools-container">
+            <div class="tool-box">
+                <h3>BMI Calculator</h3>
+                <a href="bmicalculator.html">Open</a>
+            </div>
+            <div class="tool-box">
+                <h3>Basic Calculator</h3>
+                <a href="simplecalc.html">Open</a>
+            </div>
+            <div class="tool-box">
+                <h3>Zakat Calculator</h3>
+                <a href="zakat.html">Open</a>
+            </div>
+            <div class="tool-box">
+                <h3>Unit Converter</h3>
+                <a href="unitconvert.html">Open</a>
+            </div>
+            <div class="special-box-container">
+                <div class="tool-box special-box">
+                    <h3><a href="index.html">MAIN</a></h3>
+                </div>
+                <div class="tool-box special-box" style="font-size: 10px; font-family: 'Poppins', sans-serif;">
+                    <h3><a href="personalInfo.html">PERSONAL PAGE</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
